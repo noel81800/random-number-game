@@ -1,0 +1,25 @@
+{
+  "name": "random number game",
+  "version": "1.0.0",
+  "default": "index.tsx",
+  "scripts": {
+    "start": "parcel public/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@parcel/transformer-typescript-tsc": "^2.12.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "parcel": "^2.12.0",
+    "process": "^0.11.10",
+    "typescript": "^5.5.2"
+  }
+}
