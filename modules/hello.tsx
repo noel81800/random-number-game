@@ -9,6 +9,7 @@ const Hello = () => {
     const yourNumber = () => (randomNum === 0) ? 'Click to Start' : `Your Number is ${randomNum}`;
     
     const handleClick = () => {
+        document.getElementById('clickstart')?.classList.remove('clickstart');
         const newNum: number = Math.floor(Math.random() * 10) + 1;
         setRandomNum(newNum);
         if (randomNum === 0) {
@@ -23,6 +24,7 @@ const Hello = () => {
         if (newNum === 10) {
             
             document.getElementById('catimg')?.classList.add('animation');
+            
             return( 'You Win!' );
 
         } 
@@ -42,7 +44,7 @@ const Hello = () => {
        <>
             <button onClick={handleClick} id="button" className="center" >Generate Random Number</button>
             {/* <h2>your number is {randomNum}</h2> */}
-            <h2>{yourNumber()}</h2>
+            <h2 id="clickstart"className="clickstart">{yourNumber()}</h2>
             <h2>{isWinner(randomNum)}</h2>
        </> 
     )

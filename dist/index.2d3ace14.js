@@ -26544,6 +26544,8 @@ var Hello = function() {
         return randomNum === 0 ? "Click to Start" : "Your Number is ".concat(randomNum);
     };
     var handleClick = function() {
+        var _a;
+        (_a = document.getElementById("clickstart")) === null || _a === void 0 || _a.classList.remove("clickstart");
         var newNum = Math.floor(Math.random() * 10) + 1;
         setRandomNum(newNum);
         if (randomNum === 0) return "Click to Start";
@@ -26564,7 +26566,10 @@ var Hello = function() {
         onClick: handleClick,
         id: "button",
         className: "center"
-    }, "Generate Random Number"), /*#__PURE__*/ (0, _reactDefault.default).createElement("h2", null, yourNumber()), /*#__PURE__*/ (0, _reactDefault.default).createElement("h2", null, isWinner(randomNum)));
+    }, "Generate Random Number"), /*#__PURE__*/ (0, _reactDefault.default).createElement("h2", {
+        id: "clickstart",
+        className: "clickstart"
+    }, yourNumber()), /*#__PURE__*/ (0, _reactDefault.default).createElement("h2", null, isWinner(randomNum)));
 };
 _s(Hello, "FsSn6YuQFxL5CqJBj+DHgvI2adU=");
 _c = Hello;

@@ -39,10 +39,10 @@ h2 {
   }
 
   .animation {
-    animation: logo-spin 1s linear infinite
+    animation: img-spin 1s linear infinite
     /* transition: transform 0.5s */
   }
-
+  
   #button {
     font-size: 24px;
     /* position: absolute; */
@@ -55,17 +55,66 @@ h2 {
     padding-left: 1rem;
     padding-right: 1rem;
     z-index: 999;
+    animation: button-animate 5s infinite ease-in-out;
     /* flex-wrap: wrap; */
   }
   .cat:hover {
     filter: drop-shadow(0 0 2em #00c21aaa);
   }
+
+  .clickstart {
+    animation: clickstart 2s infinite ease-in-out;
+  }
   
-  @keyframes logo-spin {
+  @keyframes img-spin {
     0% {
       transform: rotate(0deg);
     }
     100% {
       transform: rotate(360deg);
     }
+  }
+  @keyframes button-animate {
+    
+    0% {
+      transform: rotate(0deg);
+    }
+    90% {
+      transform: rotate(0deg);
+    }
+    92% {
+      transform: rotate(15deg);
+    }
+    94% {
+      transform: rotate(-15deg);
+    }
+    96% {
+      transform: rotate(15deg);
+    }
+    98% {
+      transform: rotate(-15deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  @keyframes clickstart {
+
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1);
+    }
+    75% {
+      transform: scale(1.1);
+    }
+    /* 90% {
+      transform: scale(1.05);
+    } */
+    100% {
+      transform: scale(1);
+    }
+    
   }

@@ -32,7 +32,7 @@ h2 {
 }
 
 .animation {
-  animation: 1s linear infinite logo-spin;
+  animation: 1s linear infinite img-spin;
 }
 
 #button {
@@ -42,19 +42,72 @@ h2 {
   border-radius: 16px;
   padding: 1rem;
   font-size: 24px;
+  animation: 5s ease-in-out infinite button-animate;
 }
 
 .cat:hover {
   filter: drop-shadow(0 0 2em #00c21aaa);
 }
 
-@keyframes logo-spin {
+.clickstart {
+  animation: 2s ease-in-out infinite clickstart;
+}
+
+@keyframes img-spin {
   0% {
     transform: rotate(0);
   }
 
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes button-animate {
+  0% {
+    transform: rotate(0);
+  }
+
+  90% {
+    transform: rotate(0);
+  }
+
+  92% {
+    transform: rotate(15deg);
+  }
+
+  94% {
+    transform: rotate(-15deg);
+  }
+
+  96% {
+    transform: rotate(15deg);
+  }
+
+  98% {
+    transform: rotate(-15deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes clickstart {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  75% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
 /*# sourceMappingURL=index.db9ed22c.css.map */
