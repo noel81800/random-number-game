@@ -2958,8 +2958,20 @@ var _reactDom = require("react-dom");
 var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
 var _hello = require("../modules/hello");
 var _helloDefault = parcelHelpers.interopDefault(_hello);
+var _catJpg = require("/assets/cat.jpg");
+var _catJpgDefault = parcelHelpers.interopDefault(_catJpg);
+var _indexCss = require("./index.css");
 var Home = function() {
-    return /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _reactDefault.default).Fragment, null, /*#__PURE__*/ (0, _reactDefault.default).createElement("div", null, "Hello World!"), /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _helloDefault.default), null));
+    // function animate() {
+    //     document.getElementById('catimg')?.classList.toggle('animation')
+    // }
+    return /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _reactDefault.default).Fragment, null, /*#__PURE__*/ (0, _reactDefault.default).createElement("h1", null, "Let's Play A Game!"), /*#__PURE__*/ (0, _reactDefault.default).createElement("div", {
+        className: "cat-container"
+    }, /*#__PURE__*/ (0, _reactDefault.default).createElement("img", {
+        src: (0, _catJpgDefault.default),
+        className: "cat",
+        id: "catimg"
+    })), /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _helloDefault.default), null));
 };
 _c = Home;
 (0, _reactDomDefault.default).render(/*#__PURE__*/ (0, _reactDefault.default).createElement(Home, null), document.getElementById("root"));
@@ -2971,7 +2983,7 @@ $RefreshReg$(_c, "Home");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-dom":"j6uA9","../modules/hello":"lTIms"}],"21dqq":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-dom":"j6uA9","../modules/hello":"lTIms","/assets/cat.jpg":"echrx","./index.css":"irmnC"}],"21dqq":[function(require,module,exports) {
 "use strict";
 module.exports = require("a569817e6ea559f6");
 
@@ -26527,21 +26539,34 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _s = $RefreshSig$();
 var Hello = function() {
     _s();
-    var _a = (0, _react.useState)(), randomNum = _a[0], setRandomNum = _a[1];
-    // const printNum = () => {return(x)}
+    var _a = (0, _react.useState)(0), randomNum = _a[0], setRandomNum = _a[1];
+    var yourNumber = function() {
+        return randomNum === 0 ? "Click to Start" : "Your Number is ".concat(randomNum);
+    };
     var handleClick = function() {
         var newNum = Math.floor(Math.random() * 10) + 1;
         setRandomNum(newNum);
-        console.log("your number is:", newNum);
+        if (randomNum === 0) return "Click to Start";
+        else console.log("your number is:", newNum);
     };
     var isWinner = function(newNum) {
-        return newNum === 10 ? "You Win!" : "You Lose!";
+        var _a, _b;
+        if (newNum === 10) {
+            (_a = document.getElementById("catimg")) === null || _a === void 0 || _a.classList.add("animation");
+            return "You Win!";
+        } else if (randomNum === 0) return "";
+        else {
+            (_b = document.getElementById("catimg")) === null || _b === void 0 || _b.classList.remove("animation");
+            return "You Lose!";
+        }
     };
     return /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _reactDefault.default).Fragment, null, /*#__PURE__*/ (0, _reactDefault.default).createElement("button", {
-        onClick: handleClick
-    }, "Generate Random Number"), /*#__PURE__*/ (0, _reactDefault.default).createElement("div", null, "your number is ", randomNum), /*#__PURE__*/ (0, _reactDefault.default).createElement("div", null, isWinner(randomNum)));
+        onClick: handleClick,
+        id: "button",
+        className: "center"
+    }, "Generate Random Number"), /*#__PURE__*/ (0, _reactDefault.default).createElement("h2", null, yourNumber()), /*#__PURE__*/ (0, _reactDefault.default).createElement("h2", null, isWinner(randomNum)));
 };
-_s(Hello, "l1d6UstONiIKf1dhFqChO4EXjnY=");
+_s(Hello, "FsSn6YuQFxL5CqJBj+DHgvI2adU=");
 _c = Hello;
 exports.default = Hello;
 var _c;
@@ -26552,6 +26577,44 @@ $RefreshReg$(_c, "Hello");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["94b1M","1xC6H","4aBH6"], "4aBH6", "parcelRequiref837")
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"echrx":[function(require,module,exports) {
+module.exports = require("ac271257f5a55057").getBundleURL("6EXJA") + "cat.fefe1393.jpg" + "?" + Date.now();
+
+},{"ac271257f5a55057":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+}
+// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"irmnC":[function() {},{}]},["94b1M","1xC6H","4aBH6"], "4aBH6", "parcelRequiref837")
 
 //# sourceMappingURL=index.2d3ace14.js.map

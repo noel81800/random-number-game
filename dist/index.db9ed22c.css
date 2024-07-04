@@ -1,0 +1,60 @@
+h1 {
+  font-size: 64px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+#root {
+  text-align: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.center {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.cat-container {
+  padding: 10em;
+}
+
+.cat {
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 10em;
+  transition: transform 1s ease-in-out;
+}
+
+.animation {
+  animation: 1s linear infinite logo-spin;
+}
+
+#button {
+  color: #fff;
+  z-index: 999;
+  background: #146300;
+  border-radius: 16px;
+  padding: 1rem;
+  font-size: 24px;
+}
+
+.cat:hover {
+  filter: drop-shadow(0 0 2em #00c21aaa);
+}
+
+@keyframes logo-spin {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*# sourceMappingURL=index.db9ed22c.css.map */
